@@ -1,2 +1,0 @@
-# abracoQUERIDO
-Projeto Abraço Amigo!

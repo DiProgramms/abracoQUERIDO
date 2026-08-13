@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../projetoAmigoCSS.css" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        crossorigin="anonymous">
+
+        <title>Perfil</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width device-width, initial-scale=1.0">
+
+        <script src="../modulos_php/consultas.php"></script>
+
+        <script src="../modulos_js/relogio.js"></script>
+        <script src="../modulos_js/aviso.js"></script>
+        <script src="../modulos_js/notificacoes.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+    crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" 
+    crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div id="aviso" class="aviso"></div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Logo</a>
+                <?php
+                session_start(isset($_SESSION['nomeUsuario'])){
+                    $nomeUsuario = $_SESSION['nomeUsuario'];
+                    echo  "Perfil " . $nomeUsuario;
+                    }
+                ?>
+                <span id="notificacoes">
+                    <i class="fa fa-bell"></i>
+                    <span class="num-notificacoes"></span>
+                </span>
+                <div class=" collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./menuprincipalSUPERVISOR.html">Voltar</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Amigos</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Lista de Amigos</a>
+                                <a class="dropdown-item" href="#">Pedidos de Amizade</a>
+                                <a class="dropdown-item" href="#">Bloqueados</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                    <div class="navbar-clock">
+                        <span id="data"></span>
+                        <span id="relogio"></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main>        
+            <h1 class="TituloPD">Perfil do Usuário</h1>
+                <div class="text-center d-flex justify-content-center align-items-center">
+                    <img src="../img/avatar-padrao.jpg" class="avatar-padrao">
+                </div>
+            <div class="text-center d-flex justify-content-center align-items-center">
+                <form action="/upload" method="POST" enctype="multipart/form-data" class="mt-4">
+                    <div class="form-group">
+                        <input type="file" class="form-control-file" id="profilePICTURE" name="profilePICTURE">
+                    </div>
+                </form>
+            </div>    
+            <div class="text-center d-flex justify-content-center align-items-center">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+            <div class="box-Perfil text-center d-flex justify-content-center align-items-center">
+            <form class="px-4 py-3" action="update.php" method="POST">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="username">Usuário:</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="password">Senha:</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="name">Nome:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" class="form-control" id="cpf" name="cpf" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="birthdate">Data de Nascimento:</label>
+                        <input type="date" class="form-control" id="birthdate" name="birthdate" required>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label for="city">Cidade:</label>
+                    <input type="text" class="form-control" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Endereço:</label>
+                    <input type="text" class="form-control" id="address" name="address" required>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label for="row">Tipo de Conta:</label>
+                    <input type="text" class="form-control" id="row" name="row" value="row" disabled>
+                </div>
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+            </div>
+        </main>
+    </body>
+</html>

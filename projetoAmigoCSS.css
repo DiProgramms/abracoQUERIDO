@@ -1,0 +1,54 @@
+body.corPADRAO{
+
+    background-image: linear-gradient(to right, #023536, #40E0D0, #023536 );
+
+}
+div.corPADRAO{
+    background-image: linear-gradient(to right, #023536, #40E0D0, #023536 );
+}
+.box-Perfil{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 5px;
+
+}
+.box-Usuario{
+
+    width: 300px;
+    height: 350px;
+    background-color: turquoise;
+    padding: 5px;
+    border-radius: 15px;
+
+}
+.box-Cadastro{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 750px;
+    height: 600px;
+    background-color: turquoise;
+    padding: 20px;
+    border-radius: 15px;
+
+}
+.TituloPD{
+
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.avatar-padrao{
+
+    height: 150px;
+
+}

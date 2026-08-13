@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./projetoAmigoCSS.css" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+            crossorigin="anonymous">
+
+        <title>Menu Principal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width device-width, initial-scale=1.0">
+
+        <script src="../abracoQuerido/modulos_php/consultas.php"></script>
+
+        <script src="../abracoQuerido/modulos_js/relogio.js"></script>
+        <script src="../abracoQuerido/modulos_js/aviso.js"></script>
+        <script src="../abracoQuerido/modulos_js/notificacoes.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+    crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" 
+    crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id ="aviso" class="aviso"></div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Logo</a>
+                <?php
+                session_start();
+                if(isset($_SESSION['nomeUsuario'])){
+                    $nomeUsuario = $_SESSION['nomeUsuario'];
+                    echo "Bem-Vindo, " . $nomeUsuario;
+                    }
+                ?>
+                <span id="notificacoes">
+                    <i class=" fa fa-bell"></i>
+                    <span class="num-notificacoes"></span>
+                </span>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./consultaPACIENTES.html">Consultar Pacientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./menuprincipalSUPERVISOR.html">Voltar</a>
+                        </li>
+                    </ul>
+                </div>
+                    <div class="navbar-clock">
+                        <span id="data"></span>
+                        <span id="relogio"></span>
+                    </div>
+            </div>
+        </nav>
+
+        <div class="d-flex flex-row align-items-center justify-content-center corPADRAO" style="height: 125vh; margin:auto">
+            <div class="col">
+                <div class="card" style="width: 25rem; height: 47rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Prontuários</h5>
+                        <hr>
+                        <p>Aqui você pode fazer novos Prontuários</p>
+                        <a href="#" class="card-link">Novo Prontuário</a>
+                        <hr>
+                        <h5 class="card-title">Professor</h5>
+                        <hr>
+                        <p>Aqui, você pode falar diretamente com seu professor</p>
+                        <a href="#" class="card-link">Chat</a>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 25rem; height: 47em;">
+                    <div class="card-body">
+                        <h5 class="card-title">Próximas Consultas</h5>
+                        <hr>
+                        <p>A</p>
+                        <a href="#" class="card-link"> Mostrar Todas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 25rem; height: 47rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Criar Consultas</h5>
+                        <hr>
+                        <p>Nesta aba, você poderia realizar a criação de consultas, fazendo o agendamento
+                            das mesmas, para que assim, possa começar a atender os usuários.
+                        </p>
+                        <a href="#" class="card-link">Criar</a>
+                        <hr>
+                        <h5 class="card-title">Edição de Consultas</h5>
+                        <hr>
+                        <p>Nessa aba, será possivel você atualizar uma consulta, seja por erro de digitação,
+                            ou até mesmo uma necessidade do usuário em ter que adiar ou até mesmo adiantar a 
+                            consulta em questão.
+                        </p>
+                        <a href="#" class="card-link">Editar</a>
+                        <hr>
+                        <h5 class="card-title">Cancelamento de Consultas</h5>
+                        <hr>
+                        <p> Nessa última aba, será possivel você realizar o cancelamento de uma consulta já
+                            aberta, tenha em mente que para fazê-lo, é necessário que seja dado um motivo pela
+                            qual a consulta não pode ser realizada, novamente sendo por necessidade do usuário
+                            ou uma necessidade do próprio profissional ou do estágiario.
+                        </p>
+                        <a href="#" class="card-link">Cancelar</a>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </body>
+</html>

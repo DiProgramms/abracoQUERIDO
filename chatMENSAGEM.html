@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat de Mensagem</title>
+        <link rel="stylesheet" href="./projetoAmigoCSS.css" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script src="../abracoQuerido/modulos_js/socketIO.js"></script>
+        <script src="../abracoQuerido/modulos_js/usuarios_js/mensagens.js"></script>
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Chat de Mensagem</h1>
+                    <div id="messages" class="messsage-list"></div>
+                    <form id="form" class="message-from" action="">
+                        <input type="input" autocomplete="off" class="form-control">
+                        <button class="btn btn-primary">Enviar</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

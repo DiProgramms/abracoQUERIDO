@@ -1,0 +1,9 @@
+edilson@noteEdilson:~$ cd ~/Downloads
+wget https://dlm.mariadb.com/MariaDB/mariadb-10.11.8/linux-glibc_217-x86_64/mariadb-10.11.8-linux-glibc_217-x86_64.tar.gz
+--2026-08-13 22:26:35--  https://dlm.mariadb.com/MariaDB/mariadb-10.11.8/linux-glibc_217-x86_64/mariadb-10.11.8-linux-glibc_217-x86_64.tar.gz
+Resolvendo dlm.mariadb.com (dlm.mariadb.com)... 2606:4700::6811:bf0e, 2606:4700::6812:8718, 104.17.191.14, ...
+Conectando-se a dlm.mariadb.com (dlm.mariadb.com)|2606:4700::6811:bf0e|:443... conectado.
+A requisição HTTP foi enviada, aguardando resposta... 404 Not Found
+2026-08-13 22:26:36 ERRO 404: Not Found.
+
+edilson@noteEdilson:~/Downloads$ 

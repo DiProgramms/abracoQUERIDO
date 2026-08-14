@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .models import Perfil
@@ -64,6 +65,14 @@ def login_view(request):
             return render(request, 'core/index.html', {'error': 'Invalid username or password.'})
 
     return render(request, 'core/index.html')
+
+@login_required
+def home(request):
+    return render(request, 'core/main/menuprincipalUSUARIO.html')
+
+@login_required
+def consulta_psicologos(request):
+    return render(request, 'core/main/usuario_html/consulta_psicologos.html')
 
 # Create your views here.
 

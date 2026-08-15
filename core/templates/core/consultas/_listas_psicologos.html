@@ -1,0 +1,12 @@
+{% for psicologo in psicologos %}
+    <div class="card mb-2">
+        <div class="card-body">
+            <h6 class="card-title">{{ psicologo.nome_completo }}</h6>
+            <p class="card-text">Email: {{ psicologo.user.email }}</p>
+            <p class="card-text">CRP: {{ psicologo.crp }}</p>
+            <p class="card-text">Telefone: {{ psicologo.telefone }}</p>
+        </div>
+    </div>
+{% empty %}
+    <p>Nenhum psicólogo encontrado.</p>
+{% endfor %}

@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
+
+from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
+
+from django.core.paginator import Paginator
+from django.http import JsonResponse
+from django.template.loader import render_to_string
 
 from .models import Perfil
 
@@ -74,5 +79,18 @@ def home(request):
 def consulta_psicologos(request):
     return render(request, 'core/main/usuario_html/consulta_psicologos.html')
 
+@login_required
+def pesquisar_psicologos(request):
+    termo = request.GET.get('termoPesquisa', '')
+    pagina = request.GET.get('pagina', 1)
+
+    psicologos_qs = Perfil.objects.filter(tipo='psicologo', nome_completo__icontains=termo).order_by('nome_completo')
+
+    paginator = Paginator(psicologos_qs, 10)  # 10 psicólogos por página
+    page_obj = paginator.get_page(pagina)
+
+    html = render_to_string('core/consultas/_lista_psicologos.html', {'psicologos': page_obj})
+
+    return JsonResponse({'html': html, 'total_paginas': paginator.num_pages})
 # Create your views here.
 

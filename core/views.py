@@ -76,6 +76,10 @@ def home(request):
     return render(request, 'core/main/menuprincipalUSUARIO.html')
 
 @login_required
+def perfil_usuario(request):
+    return render(request, 'core/usuarios/perfilUSUARIO.html')  # ajuste o path do template
+
+@login_required
 def consulta_psicologos(request):
     return render(request, 'core/main/usuario_html/consulta_psicologos.html')
 
